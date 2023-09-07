@@ -1,0 +1,42 @@
+1. Importar el csv como matriz en python.
+2. Eliminar de la matriz a los jugadores que no posean fotos.
+3. Imprimir un mensaje indicando aquellos jugadores que posean foto en blanco y negro.
+4. Que el programa muestre un menu que le pida al usuario que indique que desea hacer: ver un jugados, ver todos o borrar un jugador.
+5. Si selecciona ver un jugador, el sistema le pedirá el número de camiseta y que lo imprima en pantalla con su nombre por como título y sin mostrar los ejes.
+6. Si selecciona ver todos, mostrar en una sola impresión a todos los jugadores.
+7. Si decide borrar un jugador, pedirle el nombre y el apellido. Borrar su foto de la carpeta y eliminarlo de la matriz. También borrarlo del archivo csv original.
+position = 1
+    for i in namePlayer:
+        plt.subplot(2,6,position)
+        img = mpim.imread('./info/imagenes/fotos/' + i[2]+" "+ i[1] + '.jpg')
+        plt.imshow(img)
+        plt.axis('off')
+        position = position + 1
+        if i[1] == 'di maria':
+            break
+    plt.show()
+    menu()
+
+
+    # Crear una cuadrícula de 4 filas y 3 columnas para las subtramas
+    fig, axs = plt.subplots(4, 3, figsize=(12, 10))
+    for i, jugador in enumerate(namePlayer):
+        fila = i // 3  # Calcular la fila de la subtrama
+        columna = i % 3  # Calcular la columna de la subtrama
+
+        # Obtener el nombre completo del jugador
+        nombre_completo = f"{jugador[2]} {jugador[1]}"
+    
+    # Cargar la imagen del jugador
+        img = mpim.imread(f'./info/imagenes/fotos/{nombre_completo}.jpg')
+
+    # Mostrar la imagen en la subtrama correspondiente
+        axs[fila, columna].imshow(img)
+        axs[fila, columna].set_title(nombre_completo)
+        axs[fila, columna].axis('off')
+
+# Ajustar el espacio entre subtramas
+    plt.tight_layout()
+
+# Mostrar la cuadrícula de subtramas
+    plt.show()
