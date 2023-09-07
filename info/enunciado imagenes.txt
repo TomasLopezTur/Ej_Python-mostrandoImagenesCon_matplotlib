@@ -5,17 +5,7 @@
 5. Si selecciona ver un jugador, el sistema le pedirá el número de camiseta y que lo imprima en pantalla con su nombre por como título y sin mostrar los ejes.
 6. Si selecciona ver todos, mostrar en una sola impresión a todos los jugadores.
 7. Si decide borrar un jugador, pedirle el nombre y el apellido. Borrar su foto de la carpeta y eliminarlo de la matriz. También borrarlo del archivo csv original.
-position = 1
-    for i in namePlayer:
-        plt.subplot(2,6,position)
-        img = mpim.imread('./info/imagenes/fotos/' + i[2]+" "+ i[1] + '.jpg')
-        plt.imshow(img)
-        plt.axis('off')
-        position = position + 1
-        if i[1] == 'di maria':
-            break
-    plt.show()
-    menu()
+
 
 
     # Crear una cuadrícula de 4 filas y 3 columnas para las subtramas
